@@ -1,15 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+  /* Colors */
+  --main-background-color: #E0F2FF;
+  --panel-background-color: #F7FBFF;
+  --primary-font-color: #313341;
+
+  /* Font Sizes */
+  --larger-font: 5rem;
+  --heading-font: 3rem;
+  --sub-heading-font: 2rem;
+  --small-font: 1.5rem;
+  --smaller-font: 1.2rem;
+  --normal-font: 1rem;
+
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
+  font-weight: normal;
+}
+
+html {
+  font-size: 12px;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: #313341;
-  background-color: #E0F2FF;
+  color: var(--primary-font-color);
+  background-color: var(--main-background-color);
 
   padding: 20px;
   height: 100dvh;
@@ -26,23 +48,75 @@ section {
   width: 100%;
 }
 
+/* Top Buttons */
+
 .top-btns {
   justify-content: space-between;
 }
 
+.top-btns button {
+  background: none;
+  border: none;
+}
+
+.top-btns button img {
+  width: 30px;
+  cursor: pointer;
+}
+
+/* Location-Time Info */
+
 .location-time {
   flex-direction: column;
+  gap: 10px;
 }
+
+.location-time h2 {
+  font-size: var(--heading-font);
+  font-weight: 600;
+}
+
+.location-time h5 {
+  font-size: var(--small-font);
+}
+
+/* Weather Info */
 
 .weather-info {
   flex-direction: column;
   align-items: center;
 }
 
+.weather-info img {
+  width: 200px;
+  margin: -30px;
+  filter: drop-shadow(0 0 5px rgba(40, 40, 40, 0.3));
+}
+
+.weather-conditions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-conditions h3 {
+  font-size: var(--sub-heading-font);
+}
+
 .weather-temp {
   display: flex;
-  gap: 5px;
 }
+
+.weather-temp h1 {
+  font-size: var(--larger-font);
+  font-weight: bold;
+}
+
+.weather-temp h4 {
+  font-size: var(--small-font);
+}
+
+/* Additional Info */
 
 .additional-info {
   flex-direction: column;
@@ -52,11 +126,20 @@ section {
 .rainfall-info,
 .wind-info,
 .humidity-info {
+  background: var(--panel-background-color);
+  padding: 15px;
+  border-radius: 10px;
+  font-size: var(--smaller-font);
+
+  filter: drop-shadow(0 0 5px rgba(40, 40, 40, 0.2));
+
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .info-data {
   display: flex;
-  gap: 10px;
+  gap: 15px;
 }
+

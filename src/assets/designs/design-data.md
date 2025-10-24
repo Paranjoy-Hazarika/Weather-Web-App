@@ -3,9 +3,10 @@
 ## 1. Color Palette
 | Name           | Hex     | Usage                  |
 |----------------|--------|-----------------------|
-| Secondary      | #E0F2FF | Background panels     |
+| Background      | #E0F2FF | Background     |
 | Text Dark      | #313341 | Main text             |
-| Background     | #F7FBFF | App background        |
+| Secondary     | #F7FBFF | Panel background        |
+| Text Light      | #313341 | Secondary text             |
 
 ## 2. Fonts
 - Poppins

@@ -8,7 +8,7 @@
 
   /* Font Sizes */
   --larger-font: 5rem;
-  --heading-font: 3rem;
+  --heading-font: 2.5rem;
   --sub-heading-font: 2rem;
   --small-font: 1.5rem;
   --smaller-font: 1.2rem;
@@ -60,7 +60,7 @@ section {
 }
 
 .top-btns button img {
-  width: 30px;
+  width: 25px;
   cursor: pointer;
 }
 
@@ -77,7 +77,7 @@ section {
 }
 
 .location-time h5 {
-  font-size: var(--small-font);
+  font-size: var(--smaller-font);
 }
 
 /* Weather Info */
@@ -88,32 +88,34 @@ section {
 }
 
 .weather-info img {
-  width: 200px;
+  width: 180px;
   margin: -30px;
   filter: drop-shadow(0 0 5px rgba(40, 40, 40, 0.3));
 }
 
 .weather-conditions {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* flex-direction: column; */
+  align-items: flex-start;
 }
 
-.weather-conditions h3 {
-  font-size: var(--sub-heading-font);
+.weather-conditions h4{
+  font-size: var(--small-font);
 }
 
 .weather-temp {
   display: flex;
+  flex-direction: column;
 }
 
 .weather-temp h1 {
   font-size: var(--larger-font);
   font-weight: bold;
+  text-align: center;
 }
 
-.weather-temp h4 {
-  font-size: var(--small-font);
+.weather-temp h3 {
+  font-size: var(--sub-heading-font);
 }
 
 /* Additional Info */
@@ -127,19 +129,39 @@ section {
 .wind-info,
 .humidity-info {
   background: var(--panel-background-color);
-  padding: 15px;
+  padding: 10px;
+  padding-right: 20px;
   border-radius: 10px;
-  font-size: var(--smaller-font);
 
   filter: drop-shadow(0 0 5px rgba(40, 40, 40, 0.2));
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+#rainfall-icon {
+  filter: drop-shadow(0 0 10px #3CCF91);
+}
+
+#wind-icon {
+  filter: drop-shadow(0 0 10px #FF6B6B);
+}
+
+#humidity-icon {
+  filter: drop-shadow(0 0 10px #4C8BF5);
+}
+
 .info-data {
   display: flex;
+  align-items: center;
   gap: 15px;
+}
+
+.info-data img {
+  padding: 8px;
+  border-radius: 10px;
 }
 

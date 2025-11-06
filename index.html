@@ -10,13 +10,33 @@
     <title>weather-web-app</title>
   </head>
   <body class="container">
+    <!-- Blur Container -->
+     <div class="blur-container hidden">
+     </div>
+
+    <!-- Search Container -->
+    <div class="search-container hidden">
+      <form class="search-bar">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search for a city..."
+        />
+      </form>
+    </div>
+
     <section class="top-btns">
-      <button class="calendar-btn">
-        <img src="./src/assets/icons/ui/calendar.svg" alt="Calendar icon">
-      </button>
-      
       <button  class="search-btn">
-        <img src="./src/assets/icons/ui/search.svg" alt="Search icon">
+        <img
+          src="/src/assets/icons/ui/search.svg" alt="Search icon"
+          id="search-icon">
+      </button>
+
+      <button class="calendar-btn">
+        <img
+          src="./src/assets/icons/ui/calendar.svg"
+          alt="Calendar icon"
+          id="calendar-icon">
       </button>
     </section>
     

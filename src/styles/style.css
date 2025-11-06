@@ -7,8 +7,8 @@
   --primary-font-color: #313341;
 
   /* Font Sizes */
-  --larger-font: 5rem;
-  --heading-font: 2.5rem;
+  --larger-font: 4.3rem;
+  --heading-font: 2.3rem;
   --sub-heading-font: 2rem;
   --small-font: 1.5rem;
   --smaller-font: 1.2rem;
@@ -36,6 +36,7 @@ body {
   padding: 20px;
   height: 100dvh;
   max-height: 100dvh;
+  position: relative;
 
   display: flex;
   flex-direction: column;
@@ -81,8 +82,44 @@ button {
   cursor: pointer;
 }
 
-/* Search Button */
+.top-btns .search-btn {
+  z-index: 6;
+}
 
+/* Search Button */
+.search-container {
+  position: absolute;
+  top: 45%;
+  left: 0px;
+  z-index: 10;
+
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar {
+  background-color: white;
+  padding: 15px 20px;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 100px black;
+}
+
+.search-bar input {
+  height: 50px;
+  width: 100%;
+  font-size: 1.5rem;
+
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+.hidden {
+  display: none;
+}
 
 /* Location-Time Info */
 
@@ -99,7 +136,22 @@ button {
 .location-time h5 {
   font-size: var(--smaller-font);
 }
+/* Blur Container */
 
+.blur-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  height: 100dvh;
+  width: 100%;
+
+  background: rgba(255, 255, 255, 0.30);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
 /* Weather Info */
 
 .weather-info {

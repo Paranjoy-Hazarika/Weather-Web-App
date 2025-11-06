@@ -52,17 +52,37 @@ section {
 
 .top-btns {
   justify-content: space-between;
+
+  position: relative;
+  gap: 50px;
+}
+
+button {
+  background: none;
 }
 
 .top-btns button {
-  background: none;
+  background: #F7FBFF;
   border: none;
+  border-radius: 50px;
+  padding: 10px;
+
+  max-width: fit-content;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  
+  transition: all 0.3s ease;
 }
 
-.top-btns button img {
-  width: 25px;
+
+.top-btns button:hover {
   cursor: pointer;
 }
+
+/* Search Button */
+
 
 /* Location-Time Info */
 
@@ -95,7 +115,6 @@ section {
 
 .weather-conditions {
   display: flex;
-  /* flex-direction: column; */
   align-items: flex-start;
 }
 

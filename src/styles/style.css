@@ -100,6 +100,9 @@ button {
 }
 
 .search-bar {
+  display: flex;
+  gap: 10px;
+
   background-color: white;
   padding: 15px 20px;
   width: 80%;
@@ -107,18 +110,35 @@ button {
   box-shadow: 0 0 100px black;
 }
 
-.search-bar input {
+.search-bar input[type="search"] {
   height: 50px;
   width: 100%;
   font-size: 1.5rem;
-
+  
   padding: 10px;
   border: none;
   border-radius: 10px;
 }
 
 .hidden {
-  display: none;
+  display: none !important;
+}
+
+/* Blur Container */
+
+.blur-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  height: 100dvh;
+  width: 100%;
+
+  background: rgba(255, 255, 255, 0.30);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 /* Location-Time Info */
@@ -136,22 +156,7 @@ button {
 .location-time h5 {
   font-size: var(--smaller-font);
 }
-/* Blur Container */
 
-.blur-container {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 5;
-  height: 100dvh;
-  width: 100%;
-
-  background: rgba(255, 255, 255, 0.30);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-}
 /* Weather Info */
 
 .weather-info {
@@ -204,7 +209,7 @@ button {
   padding-right: 20px;
   border-radius: 10px;
 
-  filter: drop-shadow(0 0 5px rgba(40, 40, 40, 0.2));
+  box-shadow: 0 0 5px rgba(40, 40, 40, 0.2);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 
@@ -236,3 +241,110 @@ button {
   border-radius: 10px;
 }
 
+/* Next Days Content */
+.days-section {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  height: 100%;
+  max-height: 100dvh;
+  z-index: 15;
+  background-color: var(--main-background-color);
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.back-arrow button {
+  background: #F7FBFF;
+  border: none;
+  border-radius: 50px;
+  padding: 10px;
+
+  max-width: fit-content;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  
+  transition: all 0.3s ease;
+}
+
+.back-arrow button:hover {
+  cursor: pointer;
+}
+
+.next-day {
+  background-color: var(--panel-background-color) ;
+  padding:  10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.next-day-weather {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.next-day-conditions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.next-day-conditions img {
+  width: 70px;
+  margin: -15px;
+}
+
+.next-days-extras {
+  display: flex;
+  justify-content: space-between;
+  
+  margin-top: 20px;
+  padding: 0 15px;
+}
+
+.extra-info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Remaining Days Cards */
+.next-days-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.card-days {
+  background-color: var(--panel-background-color);
+  padding: 3px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+}
+
+.card-days,
+.card-days .condition {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-days .condition {
+  gap: 10px;
+}
+
+.card-days .condition img {
+  margin-bottom: -5px;
+}

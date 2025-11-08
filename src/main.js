@@ -31,3 +31,42 @@ searchBtn.addEventListener('click', (e) => {
 
     toggle = !toggle;
 })
+
+const searchInput = document.getElementById("search-input")
+const searchBar = document.querySelector(".search-bar")
+let value;
+
+searchBar.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    value = searchInput.value;
+    console.log(`Submitted: ${value}`);
+    searchInput.value = "";
+
+    document.querySelector(".search-container").classList.toggle("hidden");
+    document.querySelector(".blur-container").classList.toggle("hidden");
+
+    if (!toggle) {
+        searchIcon.src = "/src/assets/icons/ui/arrow-left.svg";
+    } else {
+        searchIcon.src = "/src/assets/icons/ui/search.svg"
+    }
+
+    toggle = !toggle;
+})
+
+
+const calendarBtn = document.querySelector(".calendar-btn");
+const nextDaysSection = document.querySelector(".days-section")
+
+calendarBtn.addEventListener("click", (e) => {
+    nextDaysSection.classList.toggle("hidden");
+    nextDaysSection.style.left = "0%";
+})
+
+const backToMain = document.querySelector(".back-btn");
+
+backToMain.addEventListener("click", () => {
+    nextDaysSection.classList.toggle("hidden");
+    nextDaysSection.style.left = "100%";
+})

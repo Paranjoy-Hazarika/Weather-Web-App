@@ -1,38 +1,46 @@
-import searchImg from "./assets/icons/ui/search.svg";
-import arrowImg from "./assets/icons/ui/arrow-left.svg";
+import sample_data from './sample_data/sample_data.json';
 
-fetch('/src/sample_data/sample_data.json')
-    .then(response => {
+import "/node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
+
+console.log(sample_data) // only for a fixed data (use fetch when using an actual api key)
+
+// fetch(sample_data)
+//     .then(response => {
     
-        if (!response.ok) {
-            throw new Error(`HTTP error: ${response.status}`);
-        }
+//         if (!response.ok) {
+//             throw new Error(`HTTP error: ${response.status}`);
+//         }
     
-        return response.json()
-    })
-    .then(data => console.log(data))
-    .catch(error => console.error('Error occurred: ', error))
+//         return response.json()
+//     })
+//     .then(data => console.log(data))
+//     .catch(error => console.error('Error occurred: ', error))
 
 const searchBtn = document.querySelector(".search-btn")
-const searchIcon = document.querySelector("#search-icon")
+const searchIcon = document.querySelector("#search-icon");
+const searchContainer = document.querySelector(".search-container");
+const blurContainer = document.querySelector(".blur-container");
 
-let toggle = false
+const toggleSection = () => {
+    searchContainer.classList.toggle("hidden");
+    blurContainer.classList.toggle("hidden");
+}
+
+const toggleIcons = () => {
+    if (searchIcon.classList.contains("bi-search")) {
+        searchIcon.classList.remove("bi-search");
+        searchIcon.classList.add("bi-arrow-left");
+    } else if (searchIcon.classList.contains("bi-arrow-left")) {
+        searchIcon.classList.remove("bi-arrow-left");
+        searchIcon.classList.add("bi-search");
+    }
+}
 
 searchBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    document.querySelector(".search-container").classList.toggle("hidden");
-    document.querySelector(".blur-container").classList.toggle("hidden");
-
-    let searchIconSrc = searchIcon.src
-    console.log(searchIconSrc)
-
-    if (!toggle) {
-        searchIcon.src = arrowImg;
-    } else {
-        searchIcon.src = searchImg;
-    }
-
-    toggle = !toggle;
+    
+    toggleSection();
+    toggleIcons();
 })
 
 const searchInput = document.getElementById("search-input")
@@ -46,16 +54,7 @@ searchBar.addEventListener("submit", (e) => {
     console.log(`Submitted: ${value}`);
     searchInput.value = "";
 
-    document.querySelector(".search-container").classList.toggle("hidden");
-    document.querySelector(".blur-container").classList.toggle("hidden");
-
-    if (!toggle) {
-        searchIcon.src = arrowImg;
-    } else {
-        searchIcon.src = searchImg;
-    }
-
-    toggle = !toggle;
+    toggleSection();
 })
 
 

@@ -58,6 +58,11 @@ section {
   gap: 50px;
 }
 
+i {
+  font-size: var(--sub-heading-font);
+  color: #313341;
+}
+
 button {
   background: none;
 }
@@ -68,10 +73,10 @@ button {
   border-radius: 50px;
   padding: 10px;
 
-  max-width: fit-content;
+  max-width: 50px;
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: center;
   gap: 10px;
   
   transition: all 0.3s ease;
@@ -264,10 +269,10 @@ button {
   border-radius: 50px;
   padding: 10px;
 
-  max-width: fit-content;
+  max-width: 50px;
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: center;
   gap: 10px;
   
   transition: all 0.3s ease;

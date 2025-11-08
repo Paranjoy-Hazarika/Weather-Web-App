@@ -1,3 +1,6 @@
+import searchImg from "./assets/icons/ui/search.svg"
+import arrowImg from "./assets/icons/ui/arrow-left.svg.svg"
+
 fetch('/src/sample_data/sample_data.json')
     .then(response => {
     
@@ -24,9 +27,9 @@ searchBtn.addEventListener('click', (e) => {
     console.log(searchIconSrc)
 
     if (!toggle) {
-        searchIcon.src = "/src/assets/icons/ui/arrow-left.svg";
+        searchIcon.src = searchImg;
     } else {
-        searchIcon.src = "/src/assets/icons/ui/search.svg"
+        searchIcon.src = arrowImg;
     }
 
     toggle = !toggle;
@@ -47,9 +50,9 @@ searchBar.addEventListener("submit", (e) => {
     document.querySelector(".blur-container").classList.toggle("hidden");
 
     if (!toggle) {
-        searchIcon.src = "/src/assets/icons/ui/arrow-left.svg";
+        searchIcon.src = arrowImg;
     } else {
-        searchIcon.src = "/src/assets/icons/ui/search.svg"
+        searchIcon.src = searchImg;
     }
 
     toggle = !toggle;

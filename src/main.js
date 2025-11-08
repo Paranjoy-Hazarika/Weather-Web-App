@@ -27,9 +27,9 @@ searchBtn.addEventListener('click', (e) => {
     console.log(searchIconSrc)
 
     if (!toggle) {
-        searchIcon.src = searchImg;
-    } else {
         searchIcon.src = arrowImg;
+    } else {
+        searchIcon.src = searchImg;
     }
 
     toggle = !toggle;

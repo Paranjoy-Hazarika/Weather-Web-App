@@ -1,5 +1,5 @@
 import searchImg from "./assets/icons/ui/search.svg"
-import arrowImg from "./assets/icons/ui/arrow-left.svg.svg"
+import arrowImg from "./assets/icons/ui/arrow-left.svg"
 
 fetch('/src/sample_data/sample_data.json')
     .then(response => {

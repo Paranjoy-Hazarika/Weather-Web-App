@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/png" href="/weather.png" />
      <!-- This is the icon in the website title -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -175,13 +175,13 @@
       </button>
 
       <button class="calendar-btn">
-        <i class="bi bi-calendar-week" id="calendar-icon"></i>
+        <i class="bi bi-calendar" id="calendar-icon"></i>
       </button>
     </section>
     
     <section class="location-time">
-      <h2>Stockholm, <br> Sweden</h2>
-      <h5>Tue, Jun 30</h5>
+      <h2 id="city">Stockholm, <br> Sweden</h2>
+      <h5 id="date">Tue, Jun 30</h5>
     </section>
 
     <section class="weather-info">
@@ -195,7 +195,7 @@
           <h1 id="current-temp">19</h1>
           <h3 id="current-conds">Cloudy</h3>
         </div>
-        
+
         <h4 id="weather-unit">°C</h4>
       </div>
     </section>

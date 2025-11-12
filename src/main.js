@@ -24,6 +24,7 @@ const wind = document.getElementById("wind-data")
 const imgContainer = document.querySelector(".weather-icon");
 
 const API_KEY = import.meta.env.VITE_API_KEY;
+console.log('✅ VITE_API_KEY loaded:', import.meta.env.VITE_API_KEY ? 'yes' : 'no');
 
 const date = new Date()
 let cityInput;

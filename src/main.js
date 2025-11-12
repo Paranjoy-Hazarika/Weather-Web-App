@@ -98,7 +98,7 @@ backToMain.addEventListener("click", () => {
 // Handling API
 
 const apiHandling = (cityName) => {
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`)
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTPS error: ${response.status}`)

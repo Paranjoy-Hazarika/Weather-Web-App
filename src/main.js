@@ -2,6 +2,8 @@ import sample_data from './sample_data/sample_data.json';
 
 import "/node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
 
+const icon = "https://openweathermap.org/img/wn/04d@2x.png"
+
 // Buttons & Containers
 
 const searchBtn = document.querySelector(".search-btn")
@@ -21,6 +23,7 @@ const weatherBox = document.getElementById("current-conds");
 const rain = document.getElementById("rain-data")
 const humidity = document.getElementById("humidity-data")
 const wind = document.getElementById("wind-data")
+const imgContainer = document.querySelector(".weather-icon");
 
 const API_KEY = '75b1486f1ab3fddbcfce6813e460be82'
 
@@ -73,7 +76,6 @@ searchBar.addEventListener("submit", (e) => {
     cityInput = searchInput.value;
     console.log(`Submitted: ${cityInput}`);
     
-    loadWeather(cityInput);
     toggleSection();
     toggleIcons();
 
@@ -81,7 +83,6 @@ searchBar.addEventListener("submit", (e) => {
     
     searchInput.value = "";
 })
-
 
 calendarBtn.addEventListener("click", (e) => {
     nextDaysSection.classList.toggle("hidden");
@@ -93,11 +94,6 @@ backToMain.addEventListener("click", () => {
     nextDaysSection.classList.toggle("hidden");
     nextDaysSection.style.left = "100%";
 })
-
-const loadWeather = (cityName) => {
-    cityBox.innerText = `${cityName}`;
-}
-
 
 // Handling API
 
@@ -143,14 +139,16 @@ const weatherHandling = (lat, lon) => {
             const rainMeasure = data.rain ? data.rain["1h"] || data.rain["3h"] || 0 : 0;
             const windMeasure = data.wind.speed;
             const humidityMeasure = data.main.humidity;
+            const weatherIcon = data.weather[0].icon;
 
-            uiUpdate(stateName, countryName, currentTemp, weatherConds, rainMeasure, windMeasure, humidityMeasure);
+            uiUpdate(stateName, countryName, currentTemp, weatherConds, rainMeasure, windMeasure, humidityMeasure, weatherIcon);
             
         })
         .catch(error => console.error(`Error occurred: ${error}`))
     }
     
-const uiUpdate = (stateName, countryName, current_temp, weather_cond, rain_measure, wind_measure, humidity_measure) => {
+const uiUpdate = (stateName, countryName, current_temp, weather_cond, rain_measure, wind_measure, humidity_measure, weather_icon) => {
+    imgContainer.src = `https://openweathermap.org/img/wn/${weather_icon}@2x.png`;
     cityBox.innerHTML = `${stateName}, <br> ${countryName}`;    
     
     tempBox.innerText = `${Math.round(current_temp)}`
@@ -162,4 +160,3 @@ const uiUpdate = (stateName, countryName, current_temp, weather_cond, rain_measu
 
 }
 
-// Dummy Practice

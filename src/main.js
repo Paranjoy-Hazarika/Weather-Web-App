@@ -1,3 +1,5 @@
+import sample_data from './sample_data/sample_data.json';
+
 import "/node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
 
 const icon = "https://openweathermap.org/img/wn/04d@2x.png"
@@ -23,8 +25,7 @@ const humidity = document.getElementById("humidity-data")
 const wind = document.getElementById("wind-data")
 const imgContainer = document.querySelector(".weather-icon");
 
-const API_KEY = import.meta.env.VITE_API_KEY;
-console.log('✅ VITE_API_KEY loaded:', import.meta.env.VITE_API_KEY ? 'yes' : 'no');
+const API_KEY = import.meta.env.API_KEY;
 
 const date = new Date()
 let cityInput;

@@ -1,5 +1,3 @@
-import sample_data from './sample_data/sample_data.json';
-
 import "/node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
 
 const icon = "https://openweathermap.org/img/wn/04d@2x.png"
@@ -25,22 +23,12 @@ const humidity = document.getElementById("humidity-data")
 const wind = document.getElementById("wind-data")
 const imgContainer = document.querySelector(".weather-icon");
 
-const API_KEY = '75b1486f1ab3fddbcfce6813e460be82'
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 const date = new Date()
 let cityInput;
 
 const currentDate = date.toLocaleString('en-US', { weekday: 'short', month: 'short', day: '2-digit' });
-
-// API CALLS
-
-//  First Api call to geocoding api: http://api.openweathermap.org/geo/1.0/direct?q=Stockholm&limit={number of outcomes: 1 preferred}&appid={API_KEY}
-// - to get the lat and lon of that place
-
-//  Then the weather api: https://api.openweathermap.org/data/2.5/weather?lat=59.3251172&lon=18.0710935&appid=API_KEY
-// - with the values we get for lon and lat from the  earlier api call to get the place's weather
-
-//
 
 dateBox.innerText = `${currentDate}`
 

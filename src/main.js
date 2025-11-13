@@ -25,7 +25,7 @@ const humidity = document.getElementById("humidity-data")
 const wind = document.getElementById("wind-data")
 const imgContainer = document.querySelector(".weather-icon");
 
-// const API_KEY = import.meta.env.VITE_API_KEY;
+const API_KEY = import.meta.env.VITE_API_KEY;
 // const locaitonURL = ``
 
 const date = new Date()

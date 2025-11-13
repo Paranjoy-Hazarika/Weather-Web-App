@@ -63,7 +63,7 @@ searchBtn.addEventListener('click', (e) => {
 
 searchBar.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log(API_KEY)
+    console.log(`API key: ${API_KEY}`)
     cityInput = searchInput.value;
     console.log(`Submitted: ${cityInput}`);
     

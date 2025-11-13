@@ -26,6 +26,7 @@ const wind = document.getElementById("wind-data")
 const imgContainer = document.querySelector(".weather-icon");
 
 const API_KEY = import.meta.env.VITE_API_KEY;
+const locaitonURL = ``
 
 const date = new Date()
 let cityInput;
@@ -62,7 +63,7 @@ searchBtn.addEventListener('click', (e) => {
 
 searchBar.addEventListener("submit", (e) => {
     e.preventDefault();
-
+    console.log(API_KEY)
     cityInput = searchInput.value;
     console.log(`Submitted: ${cityInput}`);
     
